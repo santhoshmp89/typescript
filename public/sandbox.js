@@ -82,4 +82,9 @@
         console.log(a + b, "Optional parameter example");
     };
     func2(2, 3);
+    var func3 = function (a, b) {
+        return a + b;
+    };
+    var addition = func3(3, 4);
+    console.log(addition);
 })();

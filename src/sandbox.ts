@@ -130,13 +130,17 @@
     }
     func1();
 
-    let func2 = (a: number, b: number, c?: number|string) => {   // optional parameter
+    let func2 = (a: number, b: number, c?: number|string): void => {   // optional parameter
         console.log(a+b, "Optional parameter example")
     }    
     func2(2, 3)
 
+    let func3 = (a: number, b: number): number => {
+        return a+b;
+    }
+    let addition = func3(3,4);
+    console.log(addition)
 
 
-    
 })();
 
