@@ -94,4 +94,52 @@
     var greetAgain = function (uid, item) {
         console.log(item.name + " has a UID of " + item.uid);
     };
+    console.log("\n    ******************************\n    ---------   Function signatures ----------\n    *********************************");
+    //Example 1
+    var funcSign;
+    funcSign = function (numOne, numTwo) {
+        console.log(numOne + numTwo);
+    };
+    //Example 2
+    var funcSign2;
+    funcSign2 = function (num1, num2, type) {
+        if (type === 'add') {
+            return num1 + num2;
+        }
+        else {
+            return num1 - num2;
+        }
+    };
+    console.log(funcSign2(2, 3, 'add'));
+    console.log("\n    ******************************\n    ---------   DOM and type casting ----------\n    *********************************");
+    //let anchorElem = document.querySelector('a')!;   // 1st option
+    var anchorElem = document.querySelector('a'); //  2nd option
+    console.log(anchorElem.href);
+    var head2 = document.querySelector('.heading');
+    console.log(head2.innerHTML);
+    console.log("\n    ******************************\n    ---------   Classes  ----------\n    *********************************");
+    var Invoice = /** @class */ (function () {
+        // Example one
+        // name: string;
+        // age: number;
+        // address: string; 
+        // constructor(a: string, b: number, c: string){
+        //     this.name = a;
+        //     this.age = b;
+        //     this.address = c;
+        // }
+        // Example Two
+        function Invoice(name, age, address) {
+            var _this = this;
+            this.name = name;
+            this.age = age;
+            this.address = address;
+            this.showResult = function () {
+                console.log(_this.name, _this.age, _this.address);
+            };
+        }
+        return Invoice;
+    }());
+    var invoiceOne = new Invoice('santhosh', 31, 'Bangalore');
+    invoiceOne.showResult();
 })();

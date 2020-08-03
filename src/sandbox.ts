@@ -159,5 +159,74 @@
         console.log(`${item.name} has a UID of ${item.uid}`)
     }
 
+
+
+    console.log(`
+    ******************************
+    ---------   Function signatures ----------
+    *********************************`);
+    //Example 1
+    let funcSign: (a: number, b:number) => void;
+    funcSign = (numOne: number, numTwo: number) => {
+        console.log(numOne + numTwo);
+    }
+
+    //Example 2
+    let funcSign2: (a:number, b:number, type: string) => number;
+    funcSign2 = (num1: number, num2: number, type: string) => {
+        if(type === 'add') {
+            return num1 + num2;
+        } else {
+            return num1 - num2;
+        }
+    }
+
+    console.log(funcSign2(2, 3, 'add'))
+
+    console.log(`
+    ******************************
+    ---------   DOM and type casting ----------
+    *********************************`);
+
+    //let anchorElem = document.querySelector('a')!;   // 1st option
+    let anchorElem = document.querySelector('a') as HTMLAnchorElement;  //  2nd option
+    console.log(anchorElem.href)
+
+    let head2 = document.querySelector('.heading') as HTMLHeadingElement;
+    console.log(head2.innerHTML)
+
+
+    console.log(`
+    ******************************
+    ---------   Classes  ----------
+    *********************************`);
+
+    class Invoice {
+        // Example one
+        // name: string;
+        // age: number;
+        // address: string; 
+
+        // constructor(a: string, b: number, c: string){
+        //     this.name = a;
+        //     this.age = b;
+        //     this.address = c;
+        // }
+
+        // Example Two
+        constructor(
+            public name: string,
+            public age: number,
+            public address: string,
+        ){}
+
+        showResult = () => {
+            console.log(this.name, this.age, this.address)
+        }
+    }
+
+    let invoiceOne = new Invoice('santhosh', 31, 'Bangalore');
+    invoiceOne.showResult()
+
 })();
 
