@@ -87,4 +87,11 @@
     };
     var addition = func3(3, 4);
     console.log(addition);
+    console.log("\n    ******************************\n    ---------   type aliases ----------\n    *********************************");
+    var greet = function (uid, item) {
+        console.log(item.name + " has a UID of " + item.uid);
+    };
+    var greetAgain = function (uid, item) {
+        console.log(item.name + " has a UID of " + item.uid);
+    };
 })();

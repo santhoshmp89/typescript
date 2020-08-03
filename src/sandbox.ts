@@ -141,6 +141,23 @@
     let addition = func3(3,4);
     console.log(addition)
 
+    console.log(`
+    ******************************
+    ---------   type aliases ----------
+    *********************************`);
+    type StringOrNum = string|number
+    type objWithItem = {
+        name: string,
+        uid: StringOrNum
+    }
+
+    let greet = (uid: StringOrNum, item: objWithItem) => {
+        console.log(`${item.name} has a UID of ${item.uid}`)
+    }
+
+    let greetAgain = (uid: StringOrNum, item: objWithItem) => {
+        console.log(`${item.name} has a UID of ${item.uid}`)
+    }
 
 })();
 
