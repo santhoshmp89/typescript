@@ -28,5 +28,31 @@
     obj1.name = 'sdfds'
 
     console.log(obj1)
+
+
+
+
+    class Invoice {
+        constructor(
+            readonly client: string,
+            private ammount: number,
+            public decs: string,
+        ){
+
+        }
+
+        showDetails () {
+            return`${this.client} has ${this.ammount} for ${this.decs}`
+        }
+    }
+
+
+    let invoiceOne = new Invoice('Intel', 400, 'Internal application');
+    let invoiceTwo = new Invoice('BMW', 500, 'for development project');
+
+    let invoices: Invoice[] = [];
+    invoices.push(invoiceOne);
+    invoices.push(invoiceTwo);
+    //invoices.push({name: 'dummy'});    // cannot add because type of array in Invoices
     
 })();
