@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 (function () {
     var a = 'Typescript tutorial';
     console.log(a);
@@ -142,4 +153,35 @@
     }());
     var invoiceOne = new Invoice('santhosh', 31, 'Bangalore');
     invoiceOne.showResult();
+    console.log("\n    ******************************\n    ---------   Interface  ----------\n    *********************************");
+    var me = {
+        name: 'santhosh',
+        age: 13,
+        details: function () {
+            console.log('hi');
+        },
+    };
+    console.log(me.details());
+    var personFunc;
+    personFunc = function (person, city) {
+        console.log(person.name + '  from ' + city);
+    };
+    personFunc({ name: 'kumar', age: 12, details: function () { console.log('hi'); } }, 'bangalore');
+    console.log("\n    ******************************\n    ---------   Generics  ----------\n    *********************************");
+    var funcGene1 = function (obj) {
+        return __assign(__assign({}, obj), { uid: 11 });
+    };
+    var aa = funcGene1({ name: 'santhosh', age: 11 });
+    console.log(aa.name);
+    console.log('generics with interface');
+    var resource2 = {
+        name: 'santhosh',
+        age: 90,
+        data: ['apple', 'banana']
+    };
+    var resource3 = {
+        name: 'kumar',
+        age: 23,
+        data: { details: 'sdfs' }
+    };
 })();

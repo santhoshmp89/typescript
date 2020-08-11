@@ -9,10 +9,10 @@
     array1.push(23);
     console.log(array1);
     //array1.push(true);
-    var array2 = [];
-    array2.push({ name: 'santhos', age: 12, address: 'sdsd' });
-    console.log(array2);
-    array2[0].address = 'bangalore';
+    // let 3: {name: string, age: number, address: string}[] = [];
+    // 3.push({name: 'santhos', age: 12, address: 'sdsd'})
+    // console.log(3)
+    // 3[0].address = 'bangalore'
     var obj1 = { name: '' };
     obj1.name = 'sdfds';
     console.log(obj1);
@@ -33,4 +33,7 @@
     invoices.push(invoiceOne);
     invoices.push(invoiceTwo);
     //invoices.push({name: 'dummy'});    // cannot add because type of array in Invoices
+    var array3 = [];
+    array3.push('sdfdsf');
+    array3.push(32);
 })();

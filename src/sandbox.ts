@@ -36,7 +36,7 @@
     console.log(`******************************
     ---------   Explicit type ----------
     *********************************`);
-    let character:string;
+    let character:string|number;
     let age: number;
     character = 'character';
     age = 10;
@@ -228,5 +228,68 @@
     let invoiceOne = new Invoice('santhosh', 31, 'Bangalore');
     invoiceOne.showResult()
 
+
+    console.log(`
+    ******************************
+    ---------   Interface  ----------
+    *********************************`);
+
+    interface isPerson {
+        name: string,
+        age: Number,
+        details(): void
+    }
+
+    let me: isPerson = {
+        name: 'santhosh',
+        age: 13,
+        details(): void{
+            console.log('hi')
+        },
+    }
+    console.log(me.details())
+
+    let personFunc: (x: isPerson, y: string) => void;
+    personFunc = (person: isPerson, city: string) => {
+        console.log(person.name+ '  from ' + city);
+    }
+    personFunc({name: 'kumar', age: 12, details(){console.log('hi')}}, 'bangalore')
+
+
+    console.log(`
+    ******************************
+    ---------   Generics  ----------
+    *********************************`);
+
+    let funcGene1 = <T extends object> (obj: T) => {
+        return {
+            ...obj,
+            uid: 11
+        }
+    }
+    const aa = funcGene1({name: 'santhosh', age: 11})
+
+    console.log(aa.name)
+
+    console.log('generics with interface');
+
+    interface Resource1<T> {
+        name: string,
+        age: number,
+        data: T
+    }
+
+    let resource2: Resource1<(string | number)[]> = {
+        name: 'santhosh',
+        age: 90,
+        data: ['apple', 'banana']
+    }
+
+    let resource3: Resource1<{details: string}> = {
+        name: 'kumar',
+        age: 23,
+        data: {details: 'sdfs'}
+    }
+    
 })();
 

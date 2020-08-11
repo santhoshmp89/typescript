@@ -16,11 +16,11 @@
     //array1.push(true);
 
 
-    let array2: {name: string, age: number, address: string}[] = [];
+    // let 3: {name: string, age: number, address: string}[] = [];
 
-    array2.push({name: 'santhos', age: 12, address: 'sdsd'})
-    console.log(array2)
-    array2[0].address = 'bangalore'
+    // 3.push({name: 'santhos', age: 12, address: 'sdsd'})
+    // console.log(3)
+    // 3[0].address = 'bangalore'
 
 
     let obj1: {name: string} = {name: ''};
@@ -54,5 +54,9 @@
     invoices.push(invoiceOne);
     invoices.push(invoiceTwo);
     //invoices.push({name: 'dummy'});    // cannot add because type of array in Invoices
-    
+
+
+    let array3: (string|number)[] = [];
+    array3.push('sdfdsf');
+    array3.push(32);
 })();
